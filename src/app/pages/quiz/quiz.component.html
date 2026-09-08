@@ -1,0 +1,44 @@
+<section class="quiz">
+  <header class="question">
+    <h1>{{ question }}</h1>
+  </header>
+
+  <form class="quiz-content" [formGroup]="quizForm">
+    <div class="pokemon-image-placeholder" role="img" aria-label="ポケモン画像未設定">
+      画像準備中
+    </div>
+
+    <div class="details">
+      <label>
+        <span>タイプ：</span>
+        <input type="text" formControlName="types" readonly />
+      </label>
+
+      <label>
+        <span>しんか：</span>
+        <input type="text" formControlName="evolution" readonly />
+      </label>
+
+      <label>
+        <span>とくせい：</span>
+        <input type="text" formControlName="ability" readonly />
+      </label>
+
+      <label>
+        <span>かくれとくせい：</span>
+        <input type="text" formControlName="hiddenAbility" readonly />
+      </label>
+    </div>
+
+    <div class="answers">
+      <button
+        *ngFor="let answer of answers; let index = index"
+        type="button"
+        class="answer"
+        [class]="'answer answer-' + index"
+      >
+        {{ answer }}
+      </button>
+    </div>
+  </form>
+</section>
