@@ -51,6 +51,40 @@ Angular関連のライブラリは、Angular 16系に合わせて導入してい
 
 ---
 
+## GitHub Pagesへの手動公開
+
+このリポジトリは、ビルドした静的ファイルを `gh-pages` ブランチのルートに置いて公開します。アプリの画面遷移はハッシュ形式で、公開URLは次のとおりです。
+
+<https://wefdsxcv.github.io/pokemon_quiz/>
+
+### 初回公開
+
+1. GitHubで `gh-pages` ブランチを作成します。既存ブランチがある場合はそのブランチを使います。
+2. このリポジトリのルートで、依存パッケージをインストールしてPages用ビルドを実行します。
+
+   ```bash
+   npm ci
+   npm run build:pages
+   ```
+
+3. `dist/angular-web-sample/` の**中身**を `gh-pages` ブランチのルートにコピーし、コミットしてGitHubへpushします。プロジェクトフォルダーごとコピーせず、`index.html` がブランチのルートに置かれるようにします。
+4. GitHubリポジトリの **Settings → Pages** で、公開元を **Deploy from a branch**、ブランチを **gh-pages**、フォルダーを **/(root)** に設定して保存します。
+5. Pagesの公開が完了したら、上記URLを開いて動作を確認します。
+
+2回目以降も `npm run build:pages` を実行し、生成された `dist/angular-web-sample/` の中身で `gh-pages` ブランチの公開ファイルを更新して、コミット・pushします。
+
+### Firebaseの公開ドメイン設定
+
+ログインとユーザー情報・成績の保存はブラウザーからFirebase AuthenticationとCloud Firestoreへ接続します。アプリ用サーバーは必要ありません。公開前にFirebase Consoleで次を確認してください。
+
+* Authenticationのログイン方法で **メール/パスワード** が有効になっていること。
+* Authenticationの **設定 → 承認済みドメイン** に `wefdsxcv.github.io` が登録されていること。
+* Cloud Firestoreが作成済みで、認証ユーザーが自分の `users/{uid}` 以下のデータだけを読み書きできるセキュリティルールになっていること。
+
+FirebaseのWeb設定は `src/environments/environment.ts` にあります。FirebaseのWeb APIキーはブラウザーに配信される公開設定値です。データへのアクセス制御はFirestoreのセキュリティルールで行ってください。
+
+---
+
 ## 主な機能
 
 ### クイズ機能
