@@ -1,15 +1,60 @@
 <section class="quiz">
-  <header class="question">
+  <header *ngIf="!isFinished" class="question">
     <h1>{{ question }}</h1>
   </header>
 
-  <form class="quiz-content" [formGroup]="quizForm">
-    <div class="pokemon-image-placeholder" role="img" aria-label="ポケモン画像未設定">
-      画像準備中
+  <div *ngIf="isLoading" class="loading" role="status">
+    次の問題を読み込んでいます...
+  </div>
+
+  <p *ngIf="getRegionNotice()" class="region-notice" role="status">
+    {{ getRegionNotice() }}
+  </p>
+
+  <section *ngIf="isFinished" class="result">
+    <h2>けっか</h2>
+    <p>{{ settings.questionCount }}問中 {{ correctCount }}問正解</p>
+    <p>
+      正解率：
+      {{ (correctCount / settings.questionCount * 100) | number: '1.0-0' }}%
+    </p>
+    <p *ngIf="resultMessage" class="result-error" role="alert">
+      {{ resultMessage }}
+    </p>
+    <button type="button" class="restart" (click)="startQuiz()">
+      もう一度遊ぶ
+    </button>
+  </section>
+
+  <form
+    *ngIf="!isLoading && !isFinished"
+    class="quiz-content"
+    [formGroup]="quizForm"
+  >
+    <div class="pokemon-image-container">
+      <ng-container
+        *ngIf="currentPokemon as pokemon; else imagePlaceholder"
+      >
+        <img
+          class="pokemon-image"
+          [src]="pokemon.imagePath"
+          [alt]="pokemon.name"
+        />
+      </ng-container>
+      <ng-template #imagePlaceholder>
+        <div class="pokemon-image-placeholder">
+          画像準備中
+        </div>
+      </ng-template>
     </div>
 
     <div class="details">
-      <label>
+      <label *ngIf="settings.questionType !== 'name'">
+        <span>なまえ：</span>
+        <input type="text" formControlName="name" readonly />
+      </label>
+
+      <label *ngIf="settings.questionType !== 'type'">
         <span>タイプ：</span>
         <input type="text" formControlName="types" readonly />
       </label>
@@ -19,7 +64,7 @@
         <input type="text" formControlName="evolution" readonly />
       </label>
 
-      <label>
+      <label *ngIf="settings.questionType !== 'ability'">
         <span>とくせい：</span>
         <input type="text" formControlName="ability" readonly />
       </label>
@@ -34,8 +79,8 @@
       <button
         *ngFor="let answer of answers; let index = index"
         type="button"
-        class="answer"
-        [class]="'answer answer-' + index"
+        [class]="'answer ' + answerColorClasses[index]"
+        (click)="register(answer)"
       >
         {{ answer }}
       </button>

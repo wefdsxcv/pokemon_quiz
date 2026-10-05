@@ -1,0 +1,113 @@
+.register {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #f3f8fb;
+}
+
+.register-card {
+  width: min(100%, 32rem);
+  padding: 2rem;
+  border: 1px solid #d8e2e8;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 8%);
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  color: #6c42d8;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.description {
+  margin: 0 0 1.5rem;
+  color: #607080;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+label,
+fieldset {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label span,
+legend {
+  color: #333;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #ccd4dc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.school-types {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.school-types button {
+  min-height: 3rem;
+  border: 1px solid #ccd4dc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #405060;
+  font-weight: 700;
+}
+
+.school-types button.selected {
+  border-color: #6c42d8;
+  background-color: #eee8ff;
+  color: #5630bd;
+}
+
+.register-button {
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background-color: #7c4dff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.error {
+  color: #d93025;
+  font-size: 0.85rem;
+}
+
+.message {
+  margin: 1rem 0 0;
+  color: #d93025;
+  text-align: center;
+}
+
+.back-link {
+  display: block;
+  margin-top: 1.25rem;
+  color: #536b8a;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .school-types {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

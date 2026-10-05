@@ -1,0 +1,30 @@
+.feedback {
+  padding: 2rem;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.correct-answer,
+.correct-type {
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.correct-answer {
+  margin-top: 1rem;
+}
+
+.correct p {
+  color: #28a745;
+}
+
+.incorrect p {
+  color: #dc3545;
+}

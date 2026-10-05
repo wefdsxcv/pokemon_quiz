@@ -1,4 +1,15 @@
 <mat-toolbar class="header">
-  <span>ポケモンクイズ</span>
-  <a mat-button routerLink="/home">トップ</a>
+  <a class="brand" routerLink="/home">ポケモンクイズ</a>
+
+  <div class="header-actions">
+    <ng-container *ngIf="user$ | async as user; else guestActions">
+      <span class="user-label">{{ user.email }}</span>
+      <button mat-button type="button" (click)="logout()">ログアウト</button>
+    </ng-container>
+
+    <ng-template #guestActions>
+      <a mat-button routerLink="/login">ログイン</a>
+      <a mat-button routerLink="/register">新規登録</a>
+    </ng-template>
+  </div>
 </mat-toolbar>

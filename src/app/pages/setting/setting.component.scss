@@ -1,0 +1,60 @@
+.settings {
+  min-height: calc(100vh - 64px);
+  padding: 0 1.5rem 2rem;
+  background-color: #fff;
+}
+
+h1 {
+  margin: 0 -1.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffdf;
+  border-bottom: 1px solid #e7e7bc;
+  color: #188a24;
+  font-size: 1.5rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.message {
+  color: #666;
+}
+
+.message.error {
+  color: #d93025;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #ccd4dc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.start {
+  width: fit-content;
+  padding: 0.65rem 1.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background-color: #28a6ba;
+  color: #fff;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  label {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

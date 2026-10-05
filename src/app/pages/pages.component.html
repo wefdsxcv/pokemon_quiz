@@ -1,9 +1,17 @@
-<app-header></app-header>
+<ng-container *ngIf="showSharedLayout; else homeLayout">
+  <app-header></app-header>
 
-<div class="layout">
-  <app-side-menu></app-side-menu>
+  <div class="layout">
+    <app-side-menu></app-side-menu>
 
-  <main>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</ng-container>
+
+<ng-template #homeLayout>
+  <main class="home-layout">
     <router-outlet></router-outlet>
   </main>
-</div>
+</ng-template>

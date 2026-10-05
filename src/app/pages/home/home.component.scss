@@ -1,0 +1,150 @@
+.home {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem 1rem 4rem;
+  background:
+    radial-gradient(circle at 85% 10%, #fff4bd 0, transparent 28%),
+    linear-gradient(135deg, #f4fbff 0%, #e1f5ff 100%);
+  color: #294638;
+}
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 3px solid #cfe8d3;
+  border-radius: 28px;
+  box-shadow: 0 14px 32px rgba(70, 130, 82, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #3b9a56;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  color: #2d6b3e;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.lead {
+  margin: 1rem auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1.15rem 2.5rem;
+  border-radius: 999px;
+  background: #ef5350;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(239, 83, 80, 0.3);
+}
+
+.start-button:hover {
+  background: #d94340;
+}
+
+.login-status,
+.login-message {
+  margin: 1.25rem 0 0;
+  color: #5e7865;
+}
+
+.secondary-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.secondary-actions a {
+  color: #32834a;
+  font-weight: 700;
+}
+
+.feature-grid {
+  max-width: 760px;
+  margin: 2rem auto 0;
+}
+
+.rules-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 2px solid #d5ebd8;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(70, 130, 82, 0.1);
+  color: #2d6b3e;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rules-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(70, 130, 82, 0.18);
+}
+
+.feature-icon {
+  font-size: 2rem;
+}
+
+.rules-card strong,
+.rules-card small {
+  display: block;
+}
+
+.rules-card strong {
+  font-size: 1.3rem;
+}
+
+.rules-card small {
+  margin-top: 0.35rem;
+  color: #5e7865;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #3b9a56;
+  font-size: 2rem;
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: 0 0.5rem;
+  }
+
+  .user-label {
+    display: none;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .home {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .rules-card {
+    align-items: flex-start;
+  }
+}

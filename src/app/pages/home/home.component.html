@@ -1,1 +1,38 @@
-<p>home works!</p>
+<section class="home">
+  <div class="hero">
+    <p class="eyebrow">たのしく あそぼう！</p>
+    <h1>ポケモンクイズ</h1>
+    <p class="lead">
+      ポケモンの なまえや タイプを あてる クイズだよ！
+    </p>
+
+    <a routerLink="/quiz" class="start-button">
+      クイズを はじめる！
+    </a>
+
+    <ng-container *ngIf="user$ | async as user; else notLoggedIn">
+      <p class="login-status">{{ user.email }} で ログインちゅうだよ。</p>
+    </ng-container>
+
+    <ng-template #notLoggedIn>
+      <p class="login-message">
+        クイズを するには ログインしてね。
+      </p>
+      <div class="secondary-actions">
+        <a routerLink="/login">ログイン</a>
+        <a routerLink="/register">新規登録</a>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="feature-grid">
+    <a routerLink="/rules" class="rules-card">
+      <span class="feature-icon">📖</span>
+      <span>
+        <strong>あそびかた</strong>
+        <small>クイズの やりかたや せっていを みる</small>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+</section>

@@ -1,12 +1,25 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
 .layout {
   display: flex;
   width: 100%;
+  min-height: calc(100vh - 64px);
+  align-items: stretch;
 }
 
 .layout app-side-menu {
-  width: 20%;
+  display: block;
+  flex: 0 0 20%;
 }
 
 .layout main {
-  width: 80%;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-layout {
+  min-height: 100vh;
 }

@@ -20,13 +20,75 @@ h1 {
   padding: 2rem 1.5rem 1.5rem;
 }
 
-.pokemon-image-placeholder {
+.loading {
+  padding: 4rem 1rem;
+  color: #666;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.region-notice {
+  margin: 1rem 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff7d6;
+  color: #665000;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.result {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.result h2 {
+  margin: 0 0 1.5rem;
+  color: #188a24;
+  font-size: 1.75rem;
+}
+
+.result p {
+  margin: 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.result-error {
+  color: #d93025;
+  font-size: 0.95rem !important;
+}
+
+.restart {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background-color: #28a6ba;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.pokemon-image-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 10rem;
   height: 8rem;
   margin: 0 auto 1.25rem;
+}
+
+.pokemon-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.pokemon-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   border: 2px dashed #b8b8b8;
   color: #777;
 }
@@ -72,21 +134,80 @@ input {
   font-weight: 700;
 }
 
-.answer-0 {
-  background-color: #28a6ba;
+.type-normal {
+  background-color: #a8a77a;
 }
 
-.answer-1 {
-  background-color: #df304c;
+.type-fire {
+  background-color: #ee8130;
 }
 
-.answer-2 {
-  background-color: #28a745;
+.type-water {
+  background-color: #6390f0;
 }
 
-.answer-3 {
-  background-color: #ffbd2e;
+.type-electric {
+  background-color: #f7d02c;
   color: #111;
+}
+
+.type-grass {
+  background-color: #7ac74c;
+}
+
+.type-ice {
+  background-color: #96d9d6;
+  color: #111;
+}
+
+.type-fighting {
+  background-color: #c22e28;
+}
+
+.type-poison {
+  background-color: #a33ea1;
+}
+
+.type-ground {
+  background-color: #e2bf65;
+  color: #111;
+}
+
+.type-flying {
+  background-color: #a98ff3;
+}
+
+.type-psychic {
+  background-color: #f95587;
+}
+
+.type-bug {
+  background-color: #a6b91a;
+}
+
+.type-rock {
+  background-color: #b6a136;
+}
+
+.type-ghost {
+  background-color: #735797;
+}
+
+.type-dragon {
+  background-color: #6f35fc;
+}
+
+.type-dark {
+  background-color: #705746;
+}
+
+.type-steel {
+  background-color: #b7b7ce;
+  color: #111;
+}
+
+.type-fairy {
+  background-color: #d685ad;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,52 @@
+<section class="settings">
+  <h1>せってい</h1>
+
+  <p *ngIf="isLoading" class="message" role="status">
+    設定を読み込んでいます...
+  </p>
+
+  <form [formGroup]="settingForm" (ngSubmit)="startQuiz()">
+    <label>
+      <span>でてくるポケモン：</span>
+      <select formControlName="region">
+        <option value="kanto">カントー</option>
+        <option value="johto">ジョウト</option>
+        <option value="hoenn">ホウエン</option>
+        <option value="sinnoh">シンオウ</option>
+        <option value="unova">イッシュ</option>
+        <option value="kalos">カロス</option>
+        <option value="alola">アローラ</option>
+        <option value="galar">ガラル</option>
+        <option value="paldea">パルデア</option>
+        <option value="all">すべて</option>
+      </select>
+    </label>
+
+    <label>
+      <span>でてくるもんだい：</span>
+      <select formControlName="questionType">
+        <option value="name">なまえ</option>
+        <option value="type">タイプ</option>
+        <option value="ability">とくせい</option>
+        <option value="weakness">じゃくてん</option>
+      </select>
+    </label>
+
+    <label>
+      <span>もんだいのかず：</span>
+      <select formControlName="questionCount">
+        <option [ngValue]="5">5</option>
+        <option [ngValue]="10">10</option>
+        <option [ngValue]="15">15</option>
+      </select>
+    </label>
+
+    <button type="submit" class="start" [disabled]="isLoading">
+      {{ isLoading ? '読み込み中...' : 'スタート' }}
+    </button>
+  </form>
+
+  <p *ngIf="message" class="message error" role="alert">
+    {{ message }}
+  </p>
+</section>

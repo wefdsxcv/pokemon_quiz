@@ -1,0 +1,109 @@
+.rules-page {
+  min-height: 100vh;
+  padding: 1.5rem 1rem 4rem;
+  background:
+    radial-gradient(circle at 85% 10%, #fff4bd 0, transparent 28%),
+    linear-gradient(135deg, #f4fbff 0%, #e1f5ff 100%);
+  color: #213547;
+}
+
+.back-link {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto 1rem;
+  color: #176b98;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.rules-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(48, 119, 150, 0.14);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #1685b2;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  color: #173b59;
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.rule-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.rule-list article {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.15rem;
+  border-radius: 14px;
+  background: #f4fbff;
+}
+
+.rule-list article > span {
+  display: grid;
+  flex: 0 0 2rem;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  background: #69c1eb;
+  color: #fff;
+}
+
+.rule-list h2 {
+  margin: 0;
+  color: #173b59;
+  font-size: 1.2rem;
+}
+
+.rule-list p {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-left: 4px solid #ef5350;
+  background: #fff8e6;
+}
+
+.note p {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.home-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #ef5350;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}

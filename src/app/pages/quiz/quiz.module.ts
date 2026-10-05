@@ -4,12 +4,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { QuizRoutingModule } from './quiz-routing.module';
 import { QuizComponent } from './quiz.component';
+import { FeedbackModalModule } from '../../shared/modal/feedback-modal.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    QuizComponent,
+  ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     QuizRoutingModule,
+    FeedbackModalModule,
   ],
 })
 export class QuizModule {}

@@ -5,12 +5,15 @@ import { Observable } from 'rxjs';
 export interface Pokemon {
   no: number;
   name: string;
+  imagePath: string;
+  region: string;
   form: string;
   isMegaEvolution: boolean;
   evolutions: number[];
   types: string[];
   abilities: string[];
   hiddenAbilities: string[];
+  weaknesses: string[];
   status: {
     hp: number;
     attack: number;

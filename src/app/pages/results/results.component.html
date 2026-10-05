@@ -1,0 +1,120 @@
+<section class="results">
+  <h1>せいせき</h1>
+
+  <p *ngIf="isLoading" class="message" role="status">
+    成績を読み込んでいます...
+  </p>
+
+  <p *ngIf="!isLoading && !results.length && !message" class="message">
+    まだ成績がありません。
+  </p>
+
+  <p *ngIf="message" class="message error" role="alert">
+    {{ message }}
+  </p>
+
+  <section
+    *ngIf="!isLoading && !message && results.length"
+    class="growth-record"
+  >
+    <h2>せいちょうきろく</h2>
+
+    <div class="growth-grid">
+      <article class="growth-card">
+        <span>これまでの せいかい</span>
+        <strong>{{ growthRecord.totalCorrect }}もん</strong>
+      </article>
+
+      <article class="growth-card">
+        <span>いちばん いい せいかいりつ</span>
+        <strong>{{ growthRecord.highestScoreRate }}%</strong>
+      </article>
+
+      <article class="growth-card">
+        <span>クイズを あそんだ かいすう</span>
+        <strong>{{ growthRecord.quizCount }}かい</strong>
+      </article>
+
+      <article class="growth-card">
+        <span>とくいな ちほう</span>
+        <strong>
+          {{ growthRecord.bestRegion
+            ? getRegionLabel(growthRecord.bestRegion)
+            : 'まだ データがないよ' }}
+        </strong>
+      </article>
+
+      <article class="growth-card">
+        <span>にがてな もんだい</span>
+        <strong>
+          {{ growthRecord.weakestQuestionType
+            ? getQuestionTypeLabel(growthRecord.weakestQuestionType)
+            : 'まだ データがないよ' }}
+        </strong>
+      </article>
+    </div>
+  </section>
+
+  <section
+    *ngIf="!isLoading && !message"
+    class="achievements"
+  >
+    <h2>たっせいようそ</h2>
+
+    <div class="achievement-list">
+      <article
+        *ngFor="let achievement of achievements"
+        class="achievement-card"
+        [class.completed]="achievement.completed"
+      >
+        <div
+          *ngIf="achievement.completed"
+          class="achievement-badge"
+          aria-label="クリア"
+        >
+          ✓
+        </div>
+
+        <div class="achievement-content">
+          <h3>{{ achievement.title }}</h3>
+          <p>{{ achievement.description }}</p>
+        </div>
+
+        <span class="achievement-status">
+          {{ achievement.completed ? 'クリア！' : 'ちょうせんちゅう' }}
+        </span>
+      </article>
+    </div>
+  </section>
+
+  <h2
+    *ngIf="!isLoading && !message && results.length"
+    class="history-heading"
+  >
+    かいとうきろく
+  </h2>
+
+  <div *ngIf="!isLoading && results.length" class="result-list">
+    <article *ngFor="let result of results" class="result-card">
+      <div class="result-score">
+        <strong>{{ result.correctCount }} / {{ result.questionCount }}</strong>
+        <span>{{ result.scoreRate }}%</span>
+      </div>
+
+      <dl>
+        <div>
+          <dt>しゅつだいはんい</dt>
+          <dd>{{ getRegionLabel(result.region) }}</dd>
+        </div>
+        <div>
+          <dt>もんだいのしゅるい</dt>
+          <dd>{{ getQuestionTypeLabel(result.questionType) }}</dd>
+        </div>
+        <div>
+          <dt>ひづけ</dt>
+          <dd>{{ result.createdAt | date: 'yyyy/MM/dd HH:mm' }}</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<div class="feedback" [class.correct]="isCorrect" [class.incorrect]="!isCorrect">
+  <p>{{ isCorrect ? '○せいかい' : '×ふせいかい' }}</p>
+  <ng-container *ngIf="!isCorrect">
+    <p *ngIf="questionType === 'name'" class="correct-answer">
+      せいかいの なまえは {{ correctAnswer }} だよ！
+    </p>
+    <p *ngIf="questionType === 'type'" class="correct-answer">
+      せいかいの タイプは {{ correctAnswer }} だよ！
+    </p>
+    <p *ngIf="questionType === 'ability'" class="correct-answer">
+      せいかいの とくせいは {{ correctAnswer }} だよ！
+    </p>
+    <p *ngIf="questionType === 'weakness'" class="correct-answer">
+      せいかいの じゃくてんは {{ correctAnswer }} だよ！
+    </p>
+  </ng-container>
+  <button type="button" class="btn btn-secondary" (click)="activeModal.close()">
+    つぎへ
+  </button>
+</div>
