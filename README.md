@@ -6,7 +6,9 @@ Angularを使用して作成した、ポケモンクイズのWebアプリケー�
 
 クイズの題材としてポケモンを選択し、ポケモンの情報を利用した問題を出題するWebサイトを作成しました。
 
-https://wefdsxcv.github.io/pokemon_quiz/　　　　　git hub pages で公開しております。
+https://wefdsxcv.github.io/pokemon_quiz/
+
+git hub pages で公開しております。
 
 ---
 
